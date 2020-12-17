@@ -99,7 +99,9 @@ function sendEmail() {
         "branchId": '7935c19b649b9c399528'
     };
     workflowConfig.runtime = {};
-    workflowConfig.runtime.applicationId = '6d5aa7e34b8be727b8d5';
+    //workflowConfig.runtime.applicationId = '6d5aa7e34b8be727b8d5';
+    workflowConfig.runtime.applicationId = applicationId;
+
     workflowConfig.runtime.emailProviderId = '6b1b6a8e002d85bb28bd';
     workflowConfig.runtime.repositoryId = 'f2c3571d7a2955e7f8a1';
     workflowConfig.runtime.branchId = '7935c19b649b9c399528';
@@ -118,11 +120,9 @@ function sendEmail() {
         this.subchain(platform).createWorkflow('amexClone', workflowConfig).then(function () {
             console.log("node - NOT IMPORTANT: ", node);
             this.addResource(node);
-            var data = {
-                "coreNodeId": '',
-                "draftNodeId": '',  
-                //"coreNodeId": '35fdcd1a842f9bd38093',
-                //"draftNodeId": "35fdcd1a842f9bd38094",   //these are IMPORTANT
+            var data = { 
+                "coreNodeId": '35fdcd1a842f9bd38093',
+                "draftNodeId": "35fdcd1a842f9bd38094",   //these are IMPORTANT  but values are not
                 "email": currentUser.email
             }
             console.log("data: ", data);
