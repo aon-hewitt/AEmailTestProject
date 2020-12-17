@@ -33,7 +33,7 @@ platform = Gitana.connect(config).then(function () {
 
 
 
-function sendEmailOrig() {
+function sendEmail() {
     node.subchain(platform).then(function () {
         console.log("node: ", node);
 
@@ -83,7 +83,7 @@ function sendEmailOrig() {
     });
 }
 
-function sendEmail() {
+function sendEmailNew() {
     node.subchain(platform).then(function () {
         console.log("node: ", node);
 
