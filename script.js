@@ -72,7 +72,7 @@ function sendEmail() {
                 var data = {
                     "coreNodeId": node._doc,
                     "draftNodeId": node._doc,
-                    "email": currentUser.email
+                    "email": 'john.vogen@gmail.com'
                 }
                 console.log("data: ", data);
 
