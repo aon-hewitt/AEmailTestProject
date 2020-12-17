@@ -119,8 +119,8 @@ function sendEmail() {
             console.log("node - NOT IMPORTANT: ", node);
             this.addResource(node);
             var data = {
-                "coreNodeId": '35fdcd1a842f9bd38093',
-                "draftNodeId": "35fdcd1a842f9bd38094",
+                //"coreNodeId": '35fdcd1a842f9bd38093',
+                //"draftNodeId": "35fdcd1a842f9bd38094",
                 "email": currentUser.email
             }
             console.log("data: ", data);
