@@ -71,7 +71,7 @@ function sendEmail() {
                 this.addResource(node);
                 var data = {
                     "coreNodeId": node._doc,
-                    "draftNodeId": '862efba1c9bb8720cc1e',
+                    "draftNodeId": node._doc,
                     "email": 'john.vogen@gmail.com'
                 }
                 console.log("data: ", data);
