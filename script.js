@@ -5,6 +5,8 @@ var projectId = 'f2c138afb9b12ffec417';
 var repositoryId = 'd3760b30a4b894876003';
 var branchId = '71c33d4740fe00932be3';
 var nodeId = '9e0b176c28ab5f16b2c0';
+var platform;
+
 
 config = {
     "username": 'johnvogen',
@@ -84,7 +86,7 @@ function sendEmailOld() {
 }
 
 function sendEmail() {
-    node.subchain(platform).then(function () {
+    //node.subchain(platform).then(function () {
         console.log("node: ", node);
 
         // NOTE: this = platform
@@ -125,7 +127,7 @@ function sendEmail() {
                 });
             });
         });
-    });
+    //});
 }
 
 
