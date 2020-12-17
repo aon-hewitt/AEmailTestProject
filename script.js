@@ -14,10 +14,16 @@ config = {
 }
 platform = Gitana.connect(config).then(function () {
     platform = this;
+    console.log("platform: ", platform);
     repository = platform.readRepository(repositoryId).then(function () {
+        console.log("repository: ", repository);
+
         branch = repository.readBranch(branchId).then(function () {
+            console.log("branch: ", branch);
+
             node = branch.readNode(nodeId).then(function () {
-                
+                console.log("node: ", node);
+
             });
         });
     });
@@ -29,6 +35,8 @@ platform = Gitana.connect(config).then(function () {
 
 function sendEmail() {
     node.subchain(platform).then(function () {
+        console.log("node: ", node);
+
         // NOTE: this = platform
         var workflowConfig = {};
         workflowConfig.context = {};
@@ -44,18 +52,29 @@ function sendEmail() {
         workflowConfig.runtime.repositoryId = repositoryId;
         workflowConfig.runtime.branchId = branchId;
 
+        console.log("workflowConfig: ", workflowConfig);
+
+
         var authInfo = platform.getDriver().authInfo;
+        console.log("authInfo: ", authInfo);
 
         this.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
             var currentUser = this;
+            console.log("currentUser: ", currentUser);
 
+            console.log("workflowId: ", workflowId);
+            console.log("workflowConfig: ", workflowConfig);
 
             this.subchain(platform).createWorkflow(workflowId, workflowConfig).then(function () {
+                console.log("node: ", node);
+
                 this.addResource(node);
                 var data = {
                     "coreNodeId": node._doc,
                     "email": currentUser.email
                 }
+                console.log("data: ", data);
+
                 this.start(data).then(function () {
                 });
             });
