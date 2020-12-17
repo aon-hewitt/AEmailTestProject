@@ -33,7 +33,7 @@ platform = Gitana.connect(config).then(function () {
 
 
 
-function sendEmail() {
+function sendEmailOld() {
     node.subchain(platform).then(function () {
         console.log("node: ", node);
 
@@ -81,3 +81,49 @@ function sendEmail() {
         });
     });
 }
+
+function sendEmail() {
+    node.subchain(platform).then(function () {
+        console.log("node: ", node);
+
+        // NOTE: this = platform
+        var workflowConfig = {};
+        workflowConfig.context = {};
+        workflowConfig.context.projectId = '06fea8ff21b87b9e8358';
+        workflowConfig.payloadType = "content";
+        workflowConfig.payloadData = {
+            "repositoryId": 'f2c3571d7a2955e7f8a1',
+            "branchId": '7935c19b649b9c399528'
+        };
+        workflowConfig.runtime = {};
+        workflowConfig.runtime.applicationId = '6d5aa7e34b8be727b8d5';
+        workflowConfig.runtime.emailProviderId = '6b1b6a8e002d85bb28bd';
+        workflowConfig.runtime.repositoryId = 'f2c3571d7a2955e7f8a1';
+        workflowConfig.runtime.branchId = '7935c19b649b9c399528';
+
+        console.log("workflowConfig: ", workflowConfig);
+
+        var authInfo = platform.getDriver().authInfo;
+        console.log("authInfo: ", authInfo);
+
+        this.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
+            var currentUser = this;
+            console.log("currentUser: ", currentUser);
+            console.log("workflowId: ", 'amexWorkflow');
+            console.log("workflowConfig: ", workflowConfig);
+            this.subchain(platform).createWorkflow('amexWorkflow', workflowConfig).then(function () {
+                console.log("node - NOT IMPORTANT: ", node);
+                this.addResource(node);
+                var data = {
+                    "coreNodeId": node._doc,
+                    "email": currentUser.email
+                }
+                console.log("data: ", data);
+                this.start(data).then(function () {
+                });
+            });
+        });
+    });
+}
+
+
