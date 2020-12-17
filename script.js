@@ -1,6 +1,6 @@
 ﻿var applicationId = '8bd86d95d89e2980b664';
 var emailProviderId = '6b1b6a8e002d85bb28bd'; //?
-var workflowId = 'AEmailTestWorkflow';
+var workflowId = 'amexClone';
 var projectId = 'f2c138afb9b12ffec417';
 var repositoryId = 'd3760b30a4b894876003';
 var branchId = '71c33d4740fe00932be3';
@@ -71,7 +71,7 @@ function sendEmail() {
                 this.addResource(node);
                 var data = {
                     "coreNodeId": node._doc,
-                    "draftNodeId": node._doc,
+                    "draftNodeId": '862efba1c9bb8720cc1e',
                     "email": 'john.vogen@gmail.com'
                 }
                 console.log("data: ", data);
