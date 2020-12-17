@@ -99,9 +99,7 @@ function sendEmail() {
         "branchId": '7935c19b649b9c399528'
     };
     workflowConfig.runtime = {};
-    //workflowConfig.runtime.applicationId = '6d5aa7e34b8be727b8d5';
-    workflowConfig.runtime.applicationId = applicationId;
-
+    workflowConfig.runtime.applicationId = '6d5aa7e34b8be727b8d5';
     workflowConfig.runtime.emailProviderId = '6b1b6a8e002d85bb28bd';
     workflowConfig.runtime.repositoryId = 'f2c3571d7a2955e7f8a1';
     workflowConfig.runtime.branchId = '7935c19b649b9c399528';
@@ -112,15 +110,16 @@ function sendEmail() {
     console.log("authInfo: ", authInfo);
     platform.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
 
-    //this.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
+        //this.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
         var currentUser = this;
         console.log("currentUser: ", currentUser);
         console.log("workflowId: ", 'amexClone');
         console.log("workflowConfig: ", workflowConfig);
-        this.subchain(platform).createWorkflow('amexClone', workflowConfig).then(function () {
+        //this.subchain(platform).createWorkflow('amexClone', workflowConfig).then(function () {
+        this.subchain(platform).createWorkflow('amexClone').then(function () {
             console.log("node - NOT IMPORTANT: ", node);
             this.addResource(node);
-            var data = { 
+            var data = {
                 "coreNodeId": '35fdcd1a842f9bd38093',
                 "draftNodeId": "35fdcd1a842f9bd38094",   //these are IMPORTANT  but values are not
                 "email": currentUser.email
