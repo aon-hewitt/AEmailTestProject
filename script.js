@@ -33,7 +33,7 @@ platform = Gitana.connect(config).then(function () {
 
 
 
-function sendEmailOld() {
+function sendEmail() {
     node.subchain(platform).then(function () {
         console.log("node: ", node);
 
@@ -82,7 +82,7 @@ function sendEmailOld() {
     });
 }
 
-function sendEmail() {
+function sendEmailNew() {
     node.subchain(platform).then(function () {
         console.log("node: ", node);
 
@@ -116,7 +116,7 @@ function sendEmail() {
                 this.addResource(node);
                 var data = {
                     "coreNodeId": '35fdcd1a842f9bd38093',
-                    "draftNodeId": "35fdcd1a842f9bd38093",
+                    "draftNodeId": "35fdcd1a842f9bd38094",
                     "email": currentUser.email
                 }
                 console.log("data: ", data);
