@@ -110,9 +110,9 @@ function sendEmail() {
         this.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
             var currentUser = this;
             console.log("currentUser: ", currentUser);
-            console.log("workflowId: ", 'amexWorkflow');
+            console.log("workflowId: ", 'amexClone');
             console.log("workflowConfig: ", workflowConfig);
-            this.subchain(platform).createWorkflow('amexWorkflow', workflowConfig).then(function () {
+            this.subchain(platform).createWorkflow('amexClone', workflowConfig).then(function () {
                 console.log("node - NOT IMPORTANT: ", node);
                 this.addResource(node);
                 var data = {
