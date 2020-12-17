@@ -115,7 +115,8 @@ function sendEmail() {
                 console.log("node - NOT IMPORTANT: ", node);
                 this.addResource(node);
                 var data = {
-                    "coreNodeId": node._doc,
+                    "coreNodeId": '35fdcd1a842f9bd38093',
+                    "draftNodeId": "35fdcd1a842f9bd38093",
                     "email": currentUser.email
                 }
                 console.log("data: ", data);
