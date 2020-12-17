@@ -71,6 +71,7 @@ function sendEmail() {
                 this.addResource(node);
                 var data = {
                     "coreNodeId": node._doc,
+                    "draftNodeId": node._doc,
                     "email": currentUser.email
                 }
                 console.log("data: ", data);
