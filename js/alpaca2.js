@@ -59,7 +59,7 @@ function sendEmail() {
     workflowConfig.context.projectId = projectId;
     workflowConfig.payloadType = "content";
     workflowConfig.payloadData = {
-     //  "repositoryId": repositoryId,
+       "repositoryId": repositoryId
     //    "branchId": branchId
     };
     workflowConfig.runtime = {};
