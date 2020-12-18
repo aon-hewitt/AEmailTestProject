@@ -65,7 +65,7 @@ function sendEmail() {
     workflowConfig.runtime = {};
     workflowConfig.runtime.applicationId = applicationId;
     workflowConfig.runtime.emailProviderId = emailProviderId;
-    workflowConfig.runtime.repositoryId = repositoryId;
+    //workflowConfig.runtime.repositoryId = repositoryId;
     //workflowConfig.runtime.branchId = branchId;
 
     console.log("workflowconfig: ", workflowConfig);
