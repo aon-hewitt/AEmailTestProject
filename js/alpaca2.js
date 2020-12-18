@@ -59,13 +59,13 @@ function sendEmail() {
     workflowConfig.context.projectId = projectId;
     workflowConfig.payloadType = "content";
     workflowConfig.payloadData = {
-    //    "repositoryId": repositoryId,
+     //  "repositoryId": repositoryId,
     //    "branchId": branchId
     };
     workflowConfig.runtime = {};
     workflowConfig.runtime.applicationId = applicationId;
     workflowConfig.runtime.emailProviderId = emailProviderId;
-    //workflowConfig.runtime.repositoryId = repositoryId;
+    workflowConfig.runtime.repositoryId = repositoryId;
     //workflowConfig.runtime.branchId = branchId;
 
     console.log("workflowconfig: ", workflowConfig);
