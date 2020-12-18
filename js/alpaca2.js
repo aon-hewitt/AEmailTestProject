@@ -18,20 +18,20 @@ var branchId = '7935c19b649b9c399528';
 
 
 
-//config = {
-//               "username": username,
-//             "password": password,
-//              "baseURL": "/proxy"
-// }
-
 config = {
-    "clientKey": "1bd1ddc4-37c7-4c80-b69b-b0d8d226cc34",  // 9bfbfd0f-49e2-4909-9d10-37a32b88af8f
-    "clientSecret": "CamxJ6k/aNYbuZVV1uTox0imFpsURRugGjt/AD77DGENmJ+U87Z1eh4KBdKtCcY8/Regd9DH8DYWGJ2mcdSCsK3a+aX1WR2ftnxQQ8yg6ck=",
-    "username": username,
-    "password": password,
-    "baseURL": "https://api.cloudcms.com",
-    "application": "c8a4dc1dd5644f2934be"
-}
+               "username": username,
+             "password": password,
+              "baseURL": "/proxy"
+ }
+
+//config = {
+//    "clientKey": "1bd1ddc4-37c7-4c80-b69b-b0d8d226cc34",  // 9bfbfd0f-49e2-4909-9d10-37a32b88af8f
+//    "clientSecret": "CamxJ6k/aNYbuZVV1uTox0imFpsURRugGjt/AD77DGENmJ+U87Z1eh4KBdKtCcY8/Regd9DH8DYWGJ2mcdSCsK3a+aX1WR2ftnxQQ8yg6ck=",
+//    "username": username,
+//    "password": password,
+//    "baseURL": "https://api.cloudcms.com",
+//    "application": "c8a4dc1dd5644f2934be"
+//}
 
 //config = {
 //    "clientKey": "9bfbfd0f-49e2-4909-9d10-37a32b88af8f",
@@ -75,8 +75,6 @@ function sendEmail() {
         var currentUser = this;
         this.subchain(platform).createWorkflow(workflowId, workflowConfig).then(function () {
             var data = {
-                //"coreNodeId": '',
-                //"draftNodeId": '',
                 "email": currentUser.email
             }
             this.start(data).then(function () {
