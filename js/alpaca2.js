@@ -74,12 +74,12 @@ function sendEmail() {
     platform.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
         var currentUser = this;
         this.subchain(platform).createWorkflow(workflowId, workflowConfig).then(function () {
-            //var data = {
-            //    "coreNodeId": '',
-            //    "draftNodeId": '',
-            //    "email": currentUser.email
-            //}
-            this.start().then(function () {
+            var data = {
+                //"coreNodeId": '',
+                //"draftNodeId": '',
+                "email": currentUser.email
+            }
+            this.start(data).then(function () {
             });
         });
     });
