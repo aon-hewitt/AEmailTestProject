@@ -38,7 +38,7 @@ config = {
     "username": username,
     "password": password,
     "baseURL": "https://api.cloudcms.com",
-    "application": "c8a4dc1dd5644f2934be"
+    "application": "8bd86d95d89e2980b664 "
 }
 
 //config = {
