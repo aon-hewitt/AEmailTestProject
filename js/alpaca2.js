@@ -18,7 +18,7 @@ var emailProviderId = '6b1b6a8e002d85bb28bd';
  //original good
 var applicationId = '6d5aa7e34b8be727b8d5'; 
 var projectId = '06fea8ff21b87b9e8358';  
-//var repositoryId = 'f2c3571d7a2955e7f8a1'; 
+var repositoryId = 'f2c3571d7a2955e7f8a1'; 
 //var branchId = '7935c19b649b9c399528';  
 
 
@@ -45,12 +45,12 @@ Gitana.connect(config, function (err) {
 
 }).then(function () {
     platform = this;
-    //this.readRepository(repositoryId).then(function () {
-    //    repository = this;
+    this.readRepository(repositoryId).then(function () {
+        repository = this;
     //    this.readBranch(branchId).then(function () {
     //        branch = this;
     //    });
-    //});
+    });
 });
 
 function sendEmail() {
@@ -58,10 +58,10 @@ function sendEmail() {
     workflowConfig.context = {};
     workflowConfig.context.projectId = projectId;
     workflowConfig.payloadType = "content";
-    //workflowConfig.payloadData = {
+    workflowConfig.payloadData = {
     //    "repositoryId": repositoryId,
     //    "branchId": branchId
-    //};
+    };
     workflowConfig.runtime = {};
     workflowConfig.runtime.applicationId = applicationId;
     workflowConfig.runtime.emailProviderId = emailProviderId;
