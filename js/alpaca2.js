@@ -47,9 +47,9 @@ Gitana.connect(config, function (err) {
     platform = this;
     this.readRepository(repositoryId).then(function () {
         repository = this;
-    //    this.readBranch(branchId).then(function () {
-    //        branch = this;
-    //    });
+        this.readBranch(branchId).then(function () {
+            branch = this;
+        });
     });
 });
 
