@@ -25,21 +25,21 @@ var branchId = '71c33d4740fe00932be3';
 username = 'johnvogen';
 password = 'Sammy51856_';
 
-//config = {
-//               "username": username,
-//             "password": password,
-//              "baseURL": "/proxy"
-// }
-
-
 config = {
-    "clientKey": "9bfbfd0f-49e2-4909-9d10-37a32b88af8f", 
-    "clientSecret": "j2hIV3Da5L3moRzo0ykv2xbFIAK/02c5g08nDVoWAkXKQpU/aRK3sStjVd0nEAX7YGmjwoijPZ5/x14qNSnx1amvLgeVSWany6Avpnlyf9Q=",
-    "username": username,
-    "password": password,
-    "baseURL": "https://api.cloudcms.com",
-    "application": "8bd86d95d89e2980b664 "
-}
+               "username": username,
+             "password": password,
+              "baseURL": "/proxy"
+ }
+
+
+//config = {
+//    "clientKey": "9bfbfd0f-49e2-4909-9d10-37a32b88af8f", 
+//    "clientSecret": "j2hIV3Da5L3moRzo0ykv2xbFIAK/02c5g08nDVoWAkXKQpU/aRK3sStjVd0nEAX7YGmjwoijPZ5/x14qNSnx1amvLgeVSWany6Avpnlyf9Q=",
+//    "username": username,
+//    "password": password,
+//    "baseURL": "https://api.cloudcms.com",
+//    "application": "8bd86d95d89e2980b664 "
+//}
 
 //config = {
 //    "clientKey": "1bd1ddc4-37c7-4c80-b69b-b0d8d226cc34",  // 9bfbfd0f-49e2-4909-9d10-37a32b88af8f
