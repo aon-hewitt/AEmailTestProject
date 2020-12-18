@@ -10,16 +10,16 @@ var emailProviderId = '6b1b6a8e002d85bb28bd';
 
 
 
-//var applicationId = '8bd86d95d89e2980b664'; 
-//var projectId = 'f2c138afb9b12ffec417'; 
-//var repositoryId = 'd3760b30a4b894876003'; 
-//var branchId = '71c33d4740fe00932be3'; 
+var applicationId = '8bd86d95d89e2980b664'; 
+var projectId = 'f2c138afb9b12ffec417'; 
+var repositoryId = 'd3760b30a4b894876003'; 
+var branchId = '71c33d4740fe00932be3'; 
 
- //original good
-var applicationId = '6d5aa7e34b8be727b8d5'; 
-var projectId = '06fea8ff21b87b9e8358';  
-var repositoryId = 'f2c3571d7a2955e7f8a1'; 
-var branchId = '7935c19b649b9c399528';  
+//original good
+//var applicationId = '6d5aa7e34b8be727b8d5';
+//var projectId = '06fea8ff21b87b9e8358';
+//var repositoryId = 'f2c3571d7a2955e7f8a1';
+//var branchId = '7935c19b649b9c399528';
 
 
 username = 'johnvogen';
@@ -59,7 +59,7 @@ function sendEmail() {
     workflowConfig.context.projectId = projectId;
     workflowConfig.payloadType = "content";
     workflowConfig.payloadData = {
-       "repositoryId": repositoryId,
+        "repositoryId": repositoryId,
         "branchId": branchId
     };
     workflowConfig.runtime = {};
@@ -68,16 +68,10 @@ function sendEmail() {
     //workflowConfig.runtime.repositoryId = repositoryId;
     //workflowConfig.runtime.branchId = branchId;
 
-    console.log("workflowconfig: ", workflowConfig);
-    // auth info
     var authInfo = platform.getDriver().authInfo;
 
     platform.readDomain(authInfo.principalDomainId).readPrincipal(authInfo.principalId).then(function () {
         var currentUser = this;
-
-        console.log("currentUser: ", currentUser);
-        // create workflow and include the current user's email
-
         console.log("platform: ", platform);
         console.log("workflowId: ", workflowId);
         this.subchain(platform).createWorkflow(workflowId, workflowConfig).then(function () {
