@@ -1,0 +1,47 @@
+{
+  "title": "amexWorkflowShort",
+  "description": "",
+  "nodes": {
+    "start": {
+      "type": "start",
+      "transitions": {
+        "start": "node1"
+      }
+    },
+    "node1": {
+      "type": "participant",
+      "title": "Confirm an update",
+      "transitions": {
+        "finish": "end"
+      },
+      "swimlane": "manager",
+      "handlers": {
+        "enter": [
+          {
+            "type": "email",
+            "config": {
+              "to": "${workflow.workflowData.email}",
+              "bcc": "john.vogen@gmail.com",
+              "subject": "New Notification",
+              "body": "This is the body"
+            }
+          }
+        ]
+      }
+    },
+    "end": {
+      "type": "end"
+    }
+  },
+  "swimlanes": {
+    "manager": {
+      "principals": [
+        "johnvogen"
+      ]
+    }
+  },
+  "id": "amexWorkflowShort",
+  "version": 1,
+  "deployed": true,
+  "head": true
+}
