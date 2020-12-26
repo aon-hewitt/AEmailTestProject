@@ -1,6 +1,6 @@
 var workflowId = 'amexWorkflowShort';
-//var emailProviderId = '6b1b6a8e002d85bb28bd';  //platform provider
-var emailProviderId = '5ab62bd0c77fa211e0d1';  //Test provider
+var emailProviderId = '6b1b6a8e002d85bb28bd';  //platform provider
+//var emailProviderId = '5ab62bd0c77fa211e0d1';  //Test provider
 
 
 username = 'johnvogen';
